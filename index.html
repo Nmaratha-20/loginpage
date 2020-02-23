@@ -1,0 +1,178 @@
+<!-- <html>
+    <head>
+        <title>CodeGolf</title>
+       
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
+ <link href='https://fonts.googleapis.com/css?family=Arvo:700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:300,100' rel='stylesheet' type='text/css'>
+<!-- <style>
+    @import "bourbon";
+
+*{
+  box-sizing: border-box;
+}
+body{
+  background: black;
+}
+
+span{
+  margin: 0;
+  padding: 0;
+}
+
+.end-left{
+  margin-left: -235px;
+}
+
+.end-right{
+  margin-right: -117.5px;
+}
+.outline{
+  position: absolute;
+  top: 20px;
+}
+
+.outline{
+    color: black;
+   -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: orange;
+   font-size: 64px;
+  font-family: 'Arvo', serif;
+}
+
+.orbs{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  display: block;
+  font-size: 128px;
+ 
+  
+  span{
+     color: red;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    text-shadow: 0 0 20px orange, 1px 1px 20px orange, 2px 2px 20px orange, -1px -1px 20px orange, -2px -2px 20px orange;
+    position: absolute;
+    left: 50%;
+    
+    &:first-child{
+      margin-left: -210px;
+    }
+    
+    &:not(:first-child){
+      margin-left: -35px;
+    }
+  }
+}
+
+.glow{
+  opacity: 0;
+  font-family: 'Arvo', serif;
+  font-weight: 300;
+  color: orange;
+  margin-left: -222.5px;
+  font-size: 105px;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+} -->
+<!--</style>
+      <script src="codegolf.js"></script>      
+    </head>
+    <body>
+        <div class="slide">
+            <div class="slide__bg slide__bg--6"></div>
+            <h2 class="word word--6">
+                <span class="orbs">
+                    <span>C</span>
+                    <span>o</span>
+                    <span>d</span>
+                    <span>e</span>
+                    <span>g</span>
+                    <span>o</span>
+                    <span>l</span>
+                    <span>f</span>
+                  </span>
+                  
+
+            </h2>
+        </div>
+        <input type='email' placeholder="example@gmail.com" id="email"/>
+        <input type='password' placeholder="password" id="password"/>
+        <button onclick="login()" id="login" title="login">Login</button>
+    </body>
+   
+</html>
+<script>
+    var orbs = ('.orbs span');
+('.end-right').css('left' , '-10%');
+('.end-left').css('left', '110%');
+orbs.velocity({'top': '-300px', scaleX: '.2', scaleY: '.2', color: '#990000'},0);
+var orb = 0;
+var numOrbs = $orbs.length;
+
+$('.end-right').velocity({left : '50%'}, 'easeOutExpo', 1200);
+$('.end-left').velocity({left : '50%'}, 'easeOutExpo',  1200);
+
+
+dropOrbs = function(){
+  $orbs.eq(orb).velocity({top: '70px'}, 400).velocity({scaleX: 1, scaleY: 1, color: '#fff'}, 1000).css('position', 'relative');
+  orb = orb + 1;
+  if(orb < numOrbs){
+    setTimeout(dropOrbs, 100);
+  }
+  else{
+    setTimeout(function(){$('.glow').velocity({opacity: 1}, 1200);}, 1200);
+
+  }
+  
+
+
+setTimeout(dropOrbs, 400);
+</script>
+
+
+ -->
+ <style>
+     .ml15 {
+  font-weight: 800;
+  font-size: 3.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.ml15 .word {
+  display: inline-block;
+  line-height: 1em;
+}
+ </style>
+ <script>
+    anime.timeline({loop: true})
+.add({
+  targets: '.ml15 .word',
+  scale: [14,1],
+  opacity: [0,1],
+  easing: "easeOutCirc",
+  duration: 800,
+  delay: (el, i) => 800 * i
+}).add({
+  targets: '.ml15',
+  opacity: 0,
+  duration: 1000,
+  easing: "easeOutExpo",
+  delay: 1000
+});
+</script>
+
+<script src="anime.mim.js"></script>
+<body>
+ <h1 class="ml15">
+    <span class="word">Code</span>
+    <span class="word">Golf</span>
+  </h1>
+  </body>
+  
